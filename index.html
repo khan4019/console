@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" manifest="jsconsole.appcache">
+<head>
+	<!-- all most all the code is taken from jsconsole.com -->
+	<meta charset="utf-8" />
+	<title>JavaScript console</title>
+	<meta id="meta" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+	<link rel="icon" href="favicon.png" type="image/png">
+	<link rel='apple-touch-icon' href='favicon.png' />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link href="/startup.png" rel="apple-touch-startup-image" />
+	<link rel="stylesheet" href="console.css" />
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<form>
+  <textarea autofocus id="exec" spellcheck="false" autocapitalize="off" rows="1" autocorrect="off"></textarea>
+</form>
+
+<div id="console">
+	<button type="button" class="btn btn-success btn-sm" aria-label="Left Align">
+	  <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+	  Run
+	</button>
+  <ul id="output"></ul>
+</div>
+<script src="prettify.packed.js"></script>
+<script src="EventSource.js"></script>
+<script src="console.js"></script>
+
+</body>
+</html>
