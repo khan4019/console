@@ -17,13 +17,12 @@
 <form>
   <textarea autofocus id="exec" spellcheck="false" autocapitalize="off" rows="1" autocorrect="off"></textarea>
 </form>
-
+<button type="button" id="btn-run" class="btn btn-success btn-sm" aria-label="Left Align">
+  <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+  Run
+</button>
 <div id="console">
-	<button type="button" class="btn btn-success btn-sm" aria-label="Left Align">
-	  <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-	  Run
-	</button>
-  <ul id="output"></ul>
+	<ul id="output"></ul>
 </div>
 <script src="prettify.packed.js"></script>
 <script src="EventSource.js"></script>

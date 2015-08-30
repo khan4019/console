@@ -238,27 +238,6 @@ function appendLog(el, echo) {
   }
 }
 
-function changeView(event){
-  if (false && enableCC) return;
-  
-  var which = event.which || event.keyCode;
-  if (which == 38 && event.shiftKey == true) {
-    body.className = '';
-    cursor.focus();
-    try {
-      localStorage.large = 0;
-    } catch (e) {}
-    return false;
-  } else if (which == 40 && event.shiftKey == true) {
-    body.className = 'large';
-    try {
-      localStorage.large = 1;
-    } catch (e) {}
-    cursor.focus();
-    return false;
-  }
-}
-
 function internalCommand(cmd) {
   var parts = [], c;
   if (cmd.substr(0, 1) == ':') {
@@ -598,6 +577,13 @@ document.addEventListener ?
     post(window.event.data);
   });
 
+var btnRun = document.getElementById('btn-run');
+btnRun.addEventListener('click', function () {
+  var command = exec.textContent || exec.value;
+  if (command.length) post(command);
+  return false;
+});
+
 var exec = document.getElementById('exec'),
     form = exec.form || {},
     output = document.getElementById('output'),
@@ -814,7 +800,7 @@ exec.onkeydown = function (event) {
   if (typeof which == 'string') which = which.replace(/\/U\+/, '\\u');
   if (keys[which]) {
     if (event.shiftKey) {
-      changeView(event);
+      
     } else if (!wide) { // history cycle
       if (enableCC && window.getSelection) {
         window.selObj = window.getSelection();
@@ -854,9 +840,9 @@ exec.onkeydown = function (event) {
   } else if ((which == 13 || which == 10) && event.shiftKey == false) { // enter (what about the other one)
     removeSuggestion();
     if (event.shiftKey == true || event.metaKey || event.ctrlKey || !wide) {
-      var command = exec.textContent || exec.value;
-      if (command.length) post(command);
-      return false;
+      // var command = exec.textContent || exec.value;
+      // if (command.length) post(command);
+      // return false;
     }
   } else if ((which == 13 || which == 10) && !enableCC && event.shiftKey == true) {
     // manually expand the textarea when we don't have code completion turned on
@@ -981,7 +967,6 @@ document.onkeydown = function (event) {
     output.parentNode.scrollTop += 5 + output.parentNode.offsetHeight * (event.shiftKey ? -1 : 1);
   }
   
-  return changeView(event);
 };
 
 exec.onclick = function () {
@@ -1001,9 +986,6 @@ setTimeout(function () {
   window.scrollTo(0, 1);
 }, 500);
 
-setTimeout(function () {
-  document.getElementById('footer').className = 'hidden';
-}, 5000);
 
 getProps('window'); // cache 
 

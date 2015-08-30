@@ -266,6 +266,9 @@ form {
     font-family: "Menlo", consolas, monospace;
 }
 
+#exec{
+    min-height: 150px;
+}
 /* code complete visual tweaks */
 #cursor {
     display: inline-block;
@@ -290,42 +293,6 @@ form {
     color: #999;
 }
 
-/* large command input */
-body.large #console {
-    top: 0;
-    padding-top: 0;
-    bottom: 0;
-    margin-bottom: 0;
-    right: 40%;
-    width: auto;
-    position: absolute;
-}
-body.large form {
-    right: 0;
-    width: 40%;
-    bottom: 0;
-    background: none;
-    border: 0;
-    padding: 0;
-}
-body.large #exec {
-    position: absolute;
-    width: 100%;
-    padding: 0;
-    border-bottom: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    z-index: 10;
-    background: #E6E8F2;
-    color: #000;
-    -webkit-box-shadow: none;
-    border-left: 1px solid #AAABB8;
-    left: auto;
-}
-body.large #cursor {
-    padding: 5px;
-}
 /* with footer - which I've removed temporarily */
 /* body.large #console {
   bottom: 35px; 
@@ -403,83 +370,8 @@ body.large #cursor {
 
 
 #btn-run{
-    -webkit-appearance: none;
-    align-items: flex-start;
-    background-color: rgb(91, 183, 91);
-    background-image: linear-gradient(rgb(98, 196, 98), rgb(81, 163, 81));
-    background-position: 0% 0%;
-    background-repeat: repeat-x;
-    border-bottom-color: rgba(0, 0, 0, 0.247059);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-image-outset: 0px;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-    border-left-color: rgba(0, 0, 0, 0.0980392);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgba(0, 0, 0, 0.0980392);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgba(0, 0, 0, 0.0980392);
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-top-style: solid;
-    border-top-width: 1px;
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-stretch: normal;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    height: 30px;
-    letter-spacing: normal;
-    line-height: 20px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 10px;
-    padding-bottom: 4px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 4px;
-    text-align: center;
-    text-decoration: none;
-    text-indent: 0px;
-    text-rendering: auto;
-    text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px;
-    text-transform: none;
-    transition-delay: 0s;
-    transition-duration: 0s;
-    transition-property: all;
-    transition-timing-function: ease;
-    vertical-align: middle;
-    width: 101.625px;
-    word-spacing: 0px;
-    writing-mode: lr-tb;
-    -webkit-writing-mode: horizontal-tb;
-    Rendered Fonts
-    Arial—4 glyphs
-}
-#btn-run{
-    background-image: url(run1.png); /* 16px x 16px */
-        background-color: transparent; /* make the button transparent */
-        background-repeat: no-repeat;  /* make the background image appear only once */
-        background-position: 0px 0px;  /* equivalent to 'top left' */
-        border: none;           /* assuming we don't want any borders */
-        cursor: pointer;        /* make the cursor like hovering over an <a> element */
-        height: 16px;           /* make this the size of your image */
-        padding-left: 16px;     /* make text start to the right of the image */
-        vertical-align: middle;
+    margin-top: 170px;
+    margin-left: 10px;
 }
 /*#footer {
   -webkit-animation-name: hidefooter;
@@ -524,7 +416,7 @@ body.large #cursor {
         padding-top: 5px;
     }
     #console {
-        margin-top: 35px;
+        margin-top: 20px;
     }
     #output .echo .permalink {
         width: 18px;
